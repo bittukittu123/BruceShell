@@ -58,13 +58,13 @@ if DATABASE_URL:
         environ['UPSTREAM_BRANCH'] = config_dict['UPSTREAM_BRANCH']
     conn.close()
 
-UPSTREAM_REPO = environ.get('UPSTREAM_REPO', 'https://github.com/Gowrysankar/ThanksToDhanush')
+UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
-    UPSTREAM_REPO = 'https://github.com/Gowrysankar/ThanksToDhanush'
+    UPSTREAM_REPO = 'https://gitlab.com/Dawn-India/Z-Mirror'
 
-UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH', 'main')
+UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH', '')
 if len(UPSTREAM_BRANCH) == 0:
-    UPSTREAM_BRANCH = 'main'
+    UPSTREAM_BRANCH = 'zh_run'
 
 if ospath.exists('.git'):
     srun(["rm", "-rf", ".git"])
